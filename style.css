@@ -2,6 +2,8 @@
   --green: #183e2b;
   --light: #fdfcf8;
   --accent: #3b7f50;
+  --dark-bg: #121212;
+  --dark-text: #f0f0f0;
   --font: 'Helvetica Neue', sans-serif;
 }
 
@@ -10,6 +12,12 @@ body {
   font-family: var(--font);
   background: var(--light);
   color: var(--green);
+  transition: all 0.3s ease;
+}
+
+body.dark {
+  background: var(--dark-bg);
+  color: var(--dark-text);
 }
 
 .hero {
@@ -31,15 +39,23 @@ body {
 nav a {
   margin: 0 1rem;
   text-decoration: none;
-  color: var(--green);
+  color: inherit;
   font-weight: 500;
+}
+
+nav button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  margin-left: 1rem;
 }
 
 .container {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
@@ -69,7 +85,7 @@ nav a {
 
 .right {
   display: flex;
-  justify-content: center;
+  gap: 1.5rem;
 }
 
 .iphone-mockup {
@@ -77,9 +93,8 @@ nav a {
   height: 500px;
   background: black;
   border-radius: 40px;
-  padding: 1.2rem;
+  padding: 1rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  position: relative;
 }
 
 .screen {
@@ -89,6 +104,7 @@ nav a {
   padding: 1rem;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 }
 
 .mockup-title {
@@ -102,12 +118,42 @@ nav a {
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .product-list li {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  padding: 0.7rem 0;
-  border-bottom: 1px solid #eee;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.product-list img {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+}
+
+.add-cart {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cart-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  width: 200px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+
+.cart-box ul {
+  list-style: none;
+  padding: 0;
+  font-size: 0.9rem;
 }
